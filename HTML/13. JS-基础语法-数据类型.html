@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 类型转换 - undefined类型转为boolean
+    if(undefined) {
+        alert("undefined 转化为 false");
+    }
+
+    // 类型转换 - null类型转为boolean
+    if(null) {
+        alert("null 转化为 false");
+    }
+
+    // 类型转换 - 字符串类型转为boolean
+    if("") {
+        alert("空字符串为 false");
+    }
+    if(" ") {
+        alert("其他字符串都是 true");
+    }
+    
+    // 类型转换 - 数字类型转为boolean
+    if(0) {
+        alert("0 转换为false");
+    }
+    if(NaN) {
+        alert("NaN 转换为false");
+    }
+    if(-1) {
+        alert("除0和NaN其他数字都转为 true");
+    }
+
+    // 类型转换 - 其他类型转为数字
+    alert(parseInt("12"));// 12
+    alert(parseInt("12A45"));// 12，转换到非数字的位置停止
+    alert(parseInt("A45"));// NAN (not a number)
+
+    var age = 20;
+    var _age = "20";
+    var $age = 20;
+
+    // == 会进行类型转换，=== 不会进行类型转换
+    alert(age == _age); // true
+    alert(age === _age);// false
+    alert(age === $age);// true
+
+    // 原始数据类型
+    alert(typeof 3); // number
+    alert(typeof 3.14); // number
+
+    alert(typeof "A"); // string
+    alert(typeof 'Hello'); // string
+
+    alert(typeof true);// boolean
+    alert(typeof false);// boolean
+
+    alert(typeof null);// object
+
+    var a;
+    alert(typeof a);// undefined
+
+</script>
+</html>
