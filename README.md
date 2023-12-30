@@ -10,3 +10,20 @@ demo for java web
 - HTML-表格标签
 - HTML-表单标签
 - HTML-表单项标签
+- JS-引入方式
+- JS-基础语法-书写语法
+- JS-基础语法-变量
+- JS-基础语法-数据类型&运算符
+
+## JS
+- JS-函数
+- JS-对象-Array数组
+- JS-对象-String字符串
+- JS-对象-JSON
+- JS-对象-BOM
+- JS-对象-DOM-演示
+- JS-对象-DOM-获取元素
+- JS-对象-DOM-案例
+- JS-事件-事件绑定
+- JS-事件-常见事件
+- JS-事件-案例
