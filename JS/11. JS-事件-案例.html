@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-事件-案例</title>
+</head>
+<body>
+    <img id="h1" src="img/1.jpg"> <br><br>
+
+    <input type="button" value="上一张" onclick="before()">
+    <input type="button" value="下一张" onclick="next()">
+
+    <br><br>
+
+    <input type="text" id="name" value="TEST" onfocus="lower()" onblur="upper()">
+
+    <br><br>
+
+    <input type="checkbox" name="hobby"> 电影
+    <input type="checkbox" name="hobby"> 旅游
+    <input type="checkbox" name="hobby"> 游戏
+
+    <br><br>
+    
+    <input type="button" value="全选" onclick="checkAll()">
+    <input type="button" value="反选" onclick="reverse()">
+</body>
+
+<script>
+    //1. 点击 "下一张”按钮，显示下一张图片; 点击 "上一张” 显示上一张”图片;
+    function next() {
+        // a. 获取img元素对象
+        var img = document.getElementById("h1");
+
+        // b. 设置src属性
+        img.src = "img/2.jpg";
+    }
+
+    function before() {
+        // a. 获取img元素对象
+        var img = document.getElementById("h1");
+
+        // b. 设置src属性
+        img.src = "img/1.jpg";
+    }
+
+    //2. 输入框聚焦后，展示小写;输入框离焦后，展示大写;
+    function lower() {// 小写
+        // a. 获取输入框元素对象
+        var input = document.getElementById("name");
+
+        // b. 将值转为小写
+        input.value = input.value.toLowerCase();
+    }
+
+    function upper() {// 大写
+        // a. 获取输入框元素对象
+        var input = document.getElementById("name");
+
+        // b. 将值转为小写
+        input.value = input.value.toUpperCase();
+    }
+
+    //3. 点击"全选”按钮使所有的复选框呈现选中状态 ; 点击“反选”按使所有的复选框呈现取消勾选的状态 ;
+    function checkAll() {
+        // a. 获取所有复选框元素对象
+        var hobbys = document.getElementsByName("hobby");
+
+        // b. 设置选中状态
+        for (let i = 0; i < hobbys.length; i++) {
+            const element = hobbys[i];
+            element.checked = true;
+        }
+    }
+
+    function reverse() {
+        // a. 获取所有复选框元素对象
+        var hobbys = document.getElementsByName("hobby");
+
+        // b. 设置未选中状态
+        for (let i = 0; i < hobbys.length; i++) {
+            const element = hobbys[i];
+            element.checked = false;
+        }
+    }
+
+</script>
+</html>
