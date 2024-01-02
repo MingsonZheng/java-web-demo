@@ -13,7 +13,37 @@
                     </el-menu>
                 </el-aside>
                 <el-main>
-                    <el-table :data="tableData">
+                    <!-- 表单 -->
+                    <el-form :inline="true" :model="searchForm" class="demo-form-inline">
+                        <el-form-item label="姓名">
+                            <el-input v-model="searchForm.name" placeholder="姓名"></el-input>
+                        </el-form-item>
+
+                        <el-form-item label="性别">
+                            <el-select v-model="searchForm.gender" placeholder="性别">
+                            <el-option label="男" value="1"></el-option>
+                            <el-option label="女" value="2"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <el-form-item label="入职日期">
+                            <!-- 日期选择器 -->
+                                <el-date-picker
+                                    v-model="searchForm.entrydate"
+                                    type="daterange"
+                                    range-separator="至"
+                                    start-placeholder="开始日期"
+                                    end-placeholder="结束日期">
+                                </el-date-picker>
+                        </el-form-item>
+
+                        <el-form-item>
+                            <el-button type="primary" @click="onSubmit">查询</el-button>
+                        </el-form-item>
+                    </el-form>
+
+                    <!-- 表格 -->
+                    <el-table :data="tableData" border>
                         <el-table-column prop="name" label="姓名" width="180"></el-table-column>
                         <el-table-column prop="image" label="图像" width="180"></el-table-column>
                         <el-table-column prop="gender" label="性别" width="140"></el-table-column>
@@ -25,6 +55,14 @@
                             <el-button type="danger" size="mini">删除</el-button>
                         </el-table-column>
                     </el-table>
+
+                    <br>
+
+                    <!-- 分页条 -->
+                        <el-pagination background layout="total, sizes, prev, pager, next, jumper"
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        :total="1000"></el-pagination>
                 </el-main>
             </el-container>
         </el-container>
@@ -35,7 +73,23 @@
 export default {
     data() {
         return {
-            
+            tableData: [],
+            searchForm: {
+                name: "",
+                gender: "",
+                entrydate: []
+            }
+        }
+    },
+    methods: {
+        onSubmit:function(){
+            alert("查询数据");
+        },
+        handleSizeChange:function(val){
+        alert("每页记录数变化" + val);
+        },
+        handleCurrentChange:function(val){
+            alert("页码发生变化" + val);
         }
     }
 }
