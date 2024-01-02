@@ -16,6 +16,12 @@
       <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
       <el-table-column prop="address" label="地址"> </el-table-column>
     </el-table>
+
+    <!-- Pagination 分页 -->
+    <el-pagination background layout="total, sizes, prev, pager, next, jumper"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+     :total="1000"></el-pagination>
   </div>
 </template>
 
@@ -47,6 +53,14 @@ export default {
       ],
     };
   },
+  methods: {
+    handleSizeChange:function(val){
+        alert("每页记录数变化" + val)
+    },
+    handleCurrentChange:function(val){
+        alert("页码发生变化" + val)
+    }
+  }
 };
 </script>
 
