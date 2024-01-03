@@ -56,7 +56,26 @@
     new Vue({
         el: "#app", // vue 接管区域
         data: {
-            emps: []
+            emps: [
+            {
+                    "id": 1,
+                    "name": "谢逊",
+                    "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/web/1.jpg",
+                    "gender": 1,
+                    "job": "班主任",
+                    "entrydate": "2008-05-09",
+                    "updatetime": "2022-10-01 12:00:00"
+                },
+                {
+                    "id": 2,
+                    "name": "黛绮丝",
+                    "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/web/4.jpg",
+                    "gender": 2,
+                    "job": "讲师",
+                    "entrydate": "2018-05-09",
+                    "updatetime": "2022-10-01 12:00:00"
+                }
+            ]
         },
         mounted() {
             // 发送异步请求，加载数据
