@@ -4,7 +4,10 @@
     <!-- <element-view></element-view> -->
 
     <!-- 员工管理 -->
-    <emp-view></emp-view>
+    <!-- <emp-view></emp-view> -->
+
+    <router-view></router-view>
+    
   </div>
   <!-- <div id="app">
     <nav>
@@ -16,10 +19,10 @@
 </template>
 
 <script>
-import EmpView from './views/demo/EmpView.vue'
+// import EmpView from './views/demo/EmpView.vue'
 /* import ElementView from './views/element/ElementView.vue' */
 export default {
-  components: { EmpView /* ElementView */ },
+  components: { /* EmpView */ /* ElementView */ },
   data() {
     return {
       message: "Hello vue222"
