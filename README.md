@@ -52,3 +52,11 @@ demo for java web
 - Element-案例-页面组件实现
 - Element-案例-axios异步加载数据
 - vue路由
+
+# Web
+- maven-idea集成-配置及创建maven项目
+- maven-idea集成-导入maven项目
+- maven-依赖管理-依赖配置
+- maven-依赖管理-依赖传递
+- maven-依赖管理-依赖范围
+- maven-依赖管理-生命周期
