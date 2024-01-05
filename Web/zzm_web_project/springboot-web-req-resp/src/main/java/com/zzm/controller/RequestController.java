@@ -3,10 +3,7 @@ package com.zzm.controller;
 import com.zzm.pojo.User;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -90,5 +87,19 @@ public class RequestController {
     public String jsonParam(@RequestBody User user) {
         System.out.println(user);
         return "Ok";
+    }
+
+    // 6. 路径参数
+    @RequestMapping("/path/{id}")
+    public String pathParam(@PathVariable Integer id) {
+        System.out.println(id);
+        return "OK";
+    }
+
+    @RequestMapping("/path/{id}/{name}")
+    public String pathParam2(@PathVariable Integer id, @PathVariable String name) {
+        System.out.println(id);
+        System.out.println(name);
+        return "OK";
     }
 }
