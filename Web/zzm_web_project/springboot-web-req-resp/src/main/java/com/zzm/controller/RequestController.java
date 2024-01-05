@@ -2,10 +2,13 @@ package com.zzm.controller;
 
 import com.zzm.pojo.User;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -73,5 +76,19 @@ public class RequestController {
     public String listParam(@RequestParam List<String> hobby) {
         System.out.println(hobby);
         return "OK";
+    }
+
+    // 4. 日期时间参数
+    @RequestMapping("/dateParam")
+    public String dateParam(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime updateTime) {
+        System.out.println(updateTime);
+        return "Ok";
+    }
+
+    // 5. json 参数
+    @RequestMapping("/jsonParam")
+    public String jsonParam(@RequestBody User user) {
+        System.out.println(user);
+        return "Ok";
     }
 }
