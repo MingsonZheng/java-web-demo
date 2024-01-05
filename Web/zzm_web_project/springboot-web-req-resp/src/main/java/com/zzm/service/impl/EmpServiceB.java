@@ -1,7 +1,6 @@
 package com.zzm.service.impl;
 
 import com.zzm.dao.EmpDao;
-import com.zzm.dao.impl.EmpDaoA;
 import com.zzm.pojo.Emp;
 import com.zzm.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +12,10 @@ import java.util.List;
  * @author Mingson
  * @version 1.0
  */
-@Component // 将当前类交给IOC容器管理，成为IOC容器中的bean
-public class EmpServiceA implements EmpService {
+//@Component // 将当前类交给IOC容器管理，成为IOC容器中的bean
+public class EmpServiceB implements EmpService {
 
-    @Autowired // 运行时，IOC容器会提供该类型的bean对象，并赋值给该变量 - 依赖注入
+//    @Autowired // 运行时，IOC容器会提供该类型的bean对象，并赋值给该变量 - 依赖注入
     private EmpDao empDao;
 
     @Override
@@ -29,9 +28,9 @@ public class EmpServiceA implements EmpService {
             // 处理 gender 1:男，2:女
             String gender = emp.getGender();
             if ("1".equals(gender)) {
-                emp.setGender("男");
+                emp.setGender("男士");
             } else if ("2".equals(gender)) {
-                emp.setGender("女");
+                emp.setGender("女士");
             }
 
             // 处理job - 1: 讲师，2: 班主任 ，3:就业指导
