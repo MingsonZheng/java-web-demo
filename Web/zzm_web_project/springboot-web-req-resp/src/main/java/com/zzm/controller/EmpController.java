@@ -4,7 +4,9 @@ import com.zzm.pojo.Emp;
 import com.zzm.pojo.Result;
 import com.zzm.service.EmpService;
 import com.zzm.service.impl.EmpServiceA;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +19,11 @@ import java.util.List;
 @RestController
 public class EmpController {
 
-    @Autowired // 运行时，IOC容器会提供该类型的bean对象，并赋值给该变量 - 依赖注入
+//    @Autowired // 运行时，IOC容器会提供该类型的bean对象，并赋值给该变量 - 依赖注入
+//    @Qualifier("empServiceA")
+//    private EmpService empService;
+
+    @Resource(name = "empServiceB")
     private EmpService empService;
 
     @RequestMapping("/listEmp")

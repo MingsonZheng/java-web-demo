@@ -4,6 +4,7 @@ import com.zzm.dao.EmpDao;
 import com.zzm.pojo.Emp;
 import com.zzm.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.List;
  * @author Mingson
  * @version 1.0
  */
-// @Component // 将当前类交给IOC容器管理，成为IOC容器中的bean
+//@Primary
+//@Component // 将当前类交给IOC容器管理，成为IOC容器中的bean
 @Service
 public class EmpServiceA implements EmpService {
 
