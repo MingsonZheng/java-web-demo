@@ -19,8 +19,8 @@ class SpringbootMybatisCrudApplicationTests {
     public void testInsert() {
         // 构造员工对象
         Emp emp = new Emp();
-        emp.setUsername("Tom");
-        emp.setName("汤姆");
+        emp.setUsername("Tom3");
+        emp.setName("汤姆3");
         emp.setImage("1.jpg");
         emp.setGender((short)1);
         emp.setJob((short)1);
@@ -31,6 +31,7 @@ class SpringbootMybatisCrudApplicationTests {
 
         // 执行新增员工信息操作
         empMapper.insert(emp);
+        System.out.println(emp.getId());
     }
 
     @Test

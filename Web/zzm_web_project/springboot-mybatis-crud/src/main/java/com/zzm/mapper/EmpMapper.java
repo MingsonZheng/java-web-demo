@@ -4,6 +4,7 @@ import com.zzm.pojo.Emp;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 
 /**
  * @author Mingson
@@ -13,6 +14,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface EmpMapper {
 
     // 新增员工
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     @Insert("insert into emp (username, name, gender, image, job, entrydate, dept_id, create_time, update_time)" +
             "values (#{username},#{name},#{gender},#{image},#{job},#{entrydate},#{deptId},#{createTime},#{updateTime})")
     public void insert(Emp emp);
