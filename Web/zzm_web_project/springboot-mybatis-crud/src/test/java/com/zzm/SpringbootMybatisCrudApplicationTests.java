@@ -15,6 +15,13 @@ class SpringbootMybatisCrudApplicationTests {
     @Autowired
     private EmpMapper empMapper;
 
+    // 根据ID查询员工
+    @Test
+    public void testGetById() {
+        Emp emp = empMapper.getById(6);
+        System.out.println(emp);
+    }
+
     @Test
     public void testUpdate() {
         // 构造员工对象
