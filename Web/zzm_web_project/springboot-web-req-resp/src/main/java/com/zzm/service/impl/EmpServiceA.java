@@ -1,11 +1,10 @@
 package com.zzm.service.impl;
 
 import com.zzm.dao.EmpDao;
-import com.zzm.dao.impl.EmpDaoA;
 import com.zzm.pojo.Emp;
 import com.zzm.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -13,7 +12,8 @@ import java.util.List;
  * @author Mingson
  * @version 1.0
  */
-@Component // 将当前类交给IOC容器管理，成为IOC容器中的bean
+// @Component // 将当前类交给IOC容器管理，成为IOC容器中的bean
+@Service
 public class EmpServiceA implements EmpService {
 
     @Autowired // 运行时，IOC容器会提供该类型的bean对象，并赋值给该变量 - 依赖注入

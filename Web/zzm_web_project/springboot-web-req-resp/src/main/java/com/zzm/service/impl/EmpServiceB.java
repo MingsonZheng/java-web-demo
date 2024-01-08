@@ -3,8 +3,6 @@ package com.zzm.service.impl;
 import com.zzm.dao.EmpDao;
 import com.zzm.pojo.Emp;
 import com.zzm.service.EmpService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
