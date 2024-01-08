@@ -19,6 +19,10 @@ import java.util.List;
 @RestController
 public class EmpController {
 
+    // @Resource 与 @Autowired区别
+    // @Autowired 是spring框架提供的注解，而@Resource是JDK提供的注解。
+    // @Autowired 默认是按照类型注入，而@Resource默认是按照名称注入。
+
 //    @Autowired // 运行时，IOC容器会提供该类型的bean对象，并赋值给该变量 - 依赖注入
 //    @Qualifier("empServiceA")
 //    private EmpService empService;
