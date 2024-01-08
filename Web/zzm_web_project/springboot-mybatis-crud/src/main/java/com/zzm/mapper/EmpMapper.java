@@ -1,10 +1,7 @@
 package com.zzm.mapper;
 
 import com.zzm.pojo.Emp;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.*;
 
 /**
  * @author Mingson
@@ -12,6 +9,11 @@ import org.apache.ibatis.annotations.Options;
  */
 @Mapper
 public interface EmpMapper {
+
+    // 更新员工
+    @Update("update emp set username = #{username}, name = #{name}, gender = #{gender}, image = #{image}," +
+            "job = #{job}, entrydate = #{entrydate}, dept_id = #{deptId}, update_time = #{updateTime} where id = #{id};")
+    public void update(Emp emp);
 
     // 新增员工
     @Options(useGeneratedKeys = true, keyProperty = "id")
