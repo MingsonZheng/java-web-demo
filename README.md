@@ -69,3 +69,7 @@ demo for java web
 - 请求响应-请求-路径参数
 - 请求响应-响应-@ResponseBody&统一响应结果
 - 请求响应-响应-案例
+- 分层解耦-三层架构
+- 分层解耦-IOC&DI-入门
+- 分层解耗-IOC&DI-IOC详解
+- 分层解耦-IOC&DI-DI详解
