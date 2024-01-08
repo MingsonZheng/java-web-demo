@@ -1,9 +1,19 @@
 package com.zzm.pojo;
 
+import lombok.*;
+
 /**
  * @author Mingson
  * @version 1.0
  */
+//@Getter
+//@Setter
+//@ToString
+//@EqualsAndHashCode
+
+@Data // Equivalent to @Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode.
+@NoArgsConstructor // 无参构造
+@AllArgsConstructor // 全参构造
 public class User {
 
     private Integer id;
@@ -12,7 +22,7 @@ public class User {
     private Short gender;
     private String phone;
 
-    public User() {
+/*    public User() {
     }
 
     public User(Integer id, String name, Short age, Short gender, String phone) {
@@ -72,5 +82,5 @@ public class User {
                 ", gender=" + gender +
                 ", phone='" + phone + '\'' +
                 '}';
-    }
+    }*/
 }
