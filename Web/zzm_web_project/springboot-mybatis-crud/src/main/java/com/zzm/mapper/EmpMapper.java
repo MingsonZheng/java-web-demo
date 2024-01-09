@@ -13,19 +13,24 @@ import java.util.List;
 @Mapper
 public interface EmpMapper {
 
+    // 条件查询员工
+//    // 方式一
 //    // 模糊匹配使用 ${} 进行拼接，预编译 #{} => ? 不能出行在 '' 中
 //    @Select("select * from emp where name like '%${name}%' and gender = #{gender} and " +
-//            "entrydate between #{begin} and #{end} order by update_time desc;")
+//            "entrydate between #{begin} and #{end} order by update_time desc")
 //    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
 
-    // 解决 性能低、不安全、存在SQL注入问题
-    @Select("select * from emp where name like concat('%', #{name}, '%') and gender = #{gender} and " +
-            "entrydate between #{begin} and #{end} order by update_time desc;")
+//    // 方式二
+//    // 解决 性能低、不安全、存在SQL注入问题
+//    @Select("select * from emp where name like concat('%', #{name}, '%') and gender = #{gender} and " +
+//            "entrydate between #{begin} and #{end} order by update_time desc")
+//    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
+
+    // 方式三
     public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
 
-
-    // // 方案三: 在 application.properties 中开启mybatis的驼峰命名自动映射开关 --- a_column ------> aColumn
     // 根据ID查询员工
+    // // 方案三: 在 application.properties 中开启mybatis的驼峰命名自动映射开关 --- a_column ------> aColumn
     @Select("select * from emp where id = #{id}")
     public Emp getById(Integer id);
 
