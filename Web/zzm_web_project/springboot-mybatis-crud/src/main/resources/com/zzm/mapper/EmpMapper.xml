@@ -5,7 +5,19 @@
 <mapper namespace="com.zzm.mapper.EmpMapper">
     <!--resultType: 单条记录所封装的类型-->
     <select id="list" resultType="com.zzm.pojo.Emp">
-        select * from emp where name like concat('%', #{name}, '%') and gender = #{gender} and
-                                entrydate between #{begin} and #{end} order by update_time desc
+        select *
+        from emp
+        <where>
+            <if test="name != null">
+                name like concat('%', #{name}, '%')
+            </if>
+            <if test="gender != null">
+                and gender = #{gender}
+            </if>
+            <if test="begin != null and end != null">
+                and entrydate between #{begin} and #{end}
+            </if>
+        </where>
+        order by update_time desc
     </select>
 </mapper>

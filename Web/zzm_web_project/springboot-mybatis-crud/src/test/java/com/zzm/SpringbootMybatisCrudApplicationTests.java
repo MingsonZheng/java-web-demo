@@ -19,7 +19,11 @@ class SpringbootMybatisCrudApplicationTests {
     // 根据条件查询员工
     @Test
     public void testList() {
-        List<Emp> empList = empMapper.list("汤", (short) 1, LocalDate.of(2000, 1, 1), LocalDate.of(2020, 1, 1));
+//        List<Emp> empList = empMapper.list("汤", (short) 1, LocalDate.of(2000, 1, 1), LocalDate.of(2020, 1, 1));
+//        List<Emp> empList = empMapper.list("汤", null, null, null);
+//        List<Emp> empList = empMapper.list("汤", (short) 1, null, null);
+//        List<Emp> empList = empMapper.list(null, (short) 1, null, null);
+        List<Emp> empList = empMapper.list(null, null, null, null);
         System.out.println(empList);
     }
 
