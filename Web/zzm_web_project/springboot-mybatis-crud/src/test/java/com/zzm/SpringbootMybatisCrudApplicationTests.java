@@ -8,12 +8,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @SpringBootTest
 class SpringbootMybatisCrudApplicationTests {
 
     @Autowired
     private EmpMapper empMapper;
+
+    // 根据条件查询员工
+    @Test
+    public void testList() {
+        List<Emp> empList = empMapper.list("汤", (short) 1, LocalDate.of(2000, 1, 1), LocalDate.of(2020, 1, 1));
+        System.out.println(empList);
+    }
 
     // 根据ID查询员工
     @Test
