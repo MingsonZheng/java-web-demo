@@ -13,6 +13,9 @@ import java.util.List;
 @Mapper
 public interface EmpMapper {
 
+    // 更新员工
+    public void update2(Emp emp);
+
     // 条件查询员工
 //    // 方式一
 //    // 模糊匹配使用 ${} 进行拼接，预编译 #{} => ? 不能出行在 '' 中
@@ -50,7 +53,7 @@ public interface EmpMapper {
 
     // 更新员工
     @Update("update emp set username = #{username}, name = #{name}, gender = #{gender}, image = #{image}," +
-            "job = #{job}, entrydate = #{entrydate}, dept_id = #{deptId}, update_time = #{updateTime} where id = #{id};")
+            "job = #{job}, entrydate = #{entrydate}, dept_id = #{deptId}, update_time = #{updateTime} where id = #{id}")
     public void update(Emp emp);
 
     // 新增员工

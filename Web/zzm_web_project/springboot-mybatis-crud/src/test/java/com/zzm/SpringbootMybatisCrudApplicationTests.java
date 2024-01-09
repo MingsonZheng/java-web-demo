@@ -16,6 +16,21 @@ class SpringbootMybatisCrudApplicationTests {
     @Autowired
     private EmpMapper empMapper;
 
+    // 动态更新员工 - 更新ID为6的员工 username 更新为 Tom111，name更新为 汤111，gender更新为2
+    @Test
+    public void testUpdate2() {
+        // 构造员工对象
+        Emp emp = new Emp();
+        emp.setId(7);
+        emp.setUsername("Tom222333");
+//        emp.setName("汤姆222");
+//        emp.setGender((short)2);
+//        emp.setUpdateTime(LocalDateTime.now());
+
+        // 执行更新员工操作
+        empMapper.update2(emp);
+    }
+
     // 根据条件查询员工
     @Test
     public void testList() {

@@ -3,6 +3,22 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zzm.mapper.EmpMapper">
+    <!--动态更新员工-->
+    <update id="update2">
+        update emp
+        <set>
+            <if test="username != null">username = #{username},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="image != null">image = #{image},</if>
+            <if test="job != null">job = #{job},</if>
+            <if test="entrydate != null">entrydate = #{entrydate},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+            <if test="updateTime != null">update_time = #{updateTime}</if>
+        </set>
+        where id = #{id}
+    </update>
+
     <!--resultType: 单条记录所封装的类型-->
     <select id="list" resultType="com.zzm.pojo.Emp">
         select *
