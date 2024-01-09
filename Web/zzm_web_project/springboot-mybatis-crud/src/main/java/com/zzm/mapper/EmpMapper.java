@@ -13,6 +13,9 @@ import java.util.List;
 @Mapper
 public interface EmpMapper {
 
+    // 批量删除员工
+    public void deleteByIds(List<Integer> ids);
+
     // 更新员工
     public void update2(Emp emp);
 

@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
@@ -15,6 +16,13 @@ class SpringbootMybatisCrudApplicationTests {
 
     @Autowired
     private EmpMapper empMapper;
+
+    // 批量删除员工 - 6,7,8
+    @Test
+    public void testDeleteByIds() {
+        List<Integer> ids = Arrays.asList(6, 7, 8);
+        empMapper.deleteByIds(ids);
+    }
 
     // 动态更新员工 - 更新ID为6的员工 username 更新为 Tom111，name更新为 汤111，gender更新为2
     @Test
