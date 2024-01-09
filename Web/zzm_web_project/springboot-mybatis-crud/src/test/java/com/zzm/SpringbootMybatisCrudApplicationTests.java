@@ -79,10 +79,10 @@ class SpringbootMybatisCrudApplicationTests {
     public void testInsert() {
         // 构造员工对象
         Emp emp = new Emp();
-        emp.setUsername("Tom3");
-        emp.setName("汤姆3");
-        emp.setImage("1.jpg");
-        emp.setGender((short)1);
+        emp.setUsername("Tom2");
+        emp.setName("汤姆2");
+        emp.setImage("2.jpg");
+        emp.setGender((short)2);
         emp.setJob((short)1);
         emp.setEntrydate(LocalDate.of(2000, 1, 1));
         emp.setCreateTime(LocalDateTime.now());
