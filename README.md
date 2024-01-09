@@ -35,12 +35,12 @@ demo for java web
 - Vue-指令-案例
 - Vue-生命周期
 
-# AJAX
+## AJAX
 - Ajax-原生方式
 - Ajax-Axios
 - Ajax-Axios-案例
 
-# Vue
+## Vue
 - 前端工程化-Vue项目
 - 前端工程化-Vue项目开发流程
 - Element-快速入门
@@ -53,13 +53,16 @@ demo for java web
 - Element-案例-axios异步加载数据
 - vue路由
 
-# Web
+## Web
+### maven
 - maven-idea集成-配置及创建maven项目
 - maven-idea集成-导入maven项目
 - maven-依赖管理-依赖配置
 - maven-依赖管理-依赖传递
 - maven-依赖管理-依赖范围
 - maven-依赖管理-生命周期
+
+### SpringBoot
 - Web入门-SpringBootWeb-快速入门
 - Web入门-HTTP协议-请求协议
 - Web入门-HTTP协议-协议解析
@@ -73,3 +76,22 @@ demo for java web
 - 分层解耦-IOC&DI-入门
 - 分层解耗-IOC&DI-IOC详解
 - 分层解耦-IOC&DI-DI详解
+
+### Mybatis
+- Mybatis-入门-配置SQL提示
+- Mybatis-入门-JDBC
+- Mybatis-入门-数据库连接池
+- Mybatis-入门-lombok工具包介绍
+- Mybatis-基础操作-环境准备
+- Mybatis-基础操作-删除
+- Mybatis-基础操作-删除(预编译SQL)
+- Mybatis-基础操作-新增
+- Mybatis-基础操作-新增(主键返回)
+- Mybatis-基础操作-更新
+- Mybatis-基础操作-查询(根据ID查询)
+- Mybatis-基础操作-查询(条件查询)
+- Mybatis-XML映射文件
+- Mybatis-动态SQL-if
+- Mybatis-动态SQL-if-案例
+- Mybatis-动态SQL-foreach
+- Mybatis-动态SQL-sql&include
