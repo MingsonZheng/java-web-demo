@@ -1,5 +1,4 @@
-# java-web-demo
-demo for java web
+# 🔥Java Web 开发
 
 ## HTML
 - HTML-新浪新闻-实现标题-样式1
