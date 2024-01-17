@@ -28,3 +28,6 @@ replay_pid*
 *.png
 *.mp3
 *.mp4
+
+# idea
+.idea
