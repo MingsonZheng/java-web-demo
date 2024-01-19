@@ -55,4 +55,12 @@ public interface EmpMapper {
             " values(#{username}, #{name}, #{gender}, #{image}, #{job}, #{entrydate}, #{deptId}, #{createTime}," +
             " #{updateTime})")
     void insert(Emp emp);
+
+    /**
+     * 根据ID查询员工
+     * @param id
+     * @return
+     */
+    @Select("select * from emp where id = #{id}")
+    Emp getById(Integer id);
 }
