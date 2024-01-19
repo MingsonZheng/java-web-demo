@@ -4,6 +4,8 @@ import com.zzm.pojo.Emp;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -35,6 +37,6 @@ public interface EmpMapper {
      * 员工信息查询
      * @return
      */
-    @Select("select * from emp")
-    public List<Emp> list();
+//    @Select("select * from emp")
+    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
 }

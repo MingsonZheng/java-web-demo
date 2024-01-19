@@ -1,6 +1,10 @@
 package com.zzm.service;
 
 import com.zzm.pojo.PageBean;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * 员工管理
@@ -15,5 +19,5 @@ public interface EmpService {
      * @param pageSize
      * @return
      */
-    PageBean page(Integer page, Integer pageSize);
+    PageBean page(Integer page, Integer pageSize, String name, Short gender, LocalDate begin, LocalDate end);
 }
