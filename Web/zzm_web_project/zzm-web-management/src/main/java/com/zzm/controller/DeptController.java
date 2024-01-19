@@ -18,6 +18,7 @@ import java.util.List;
  * @version 1.0
  */
 @Slf4j
+@RequestMapping("/depts")
 @RestController
 public class DeptController {
 
@@ -30,7 +31,7 @@ public class DeptController {
      * @return
      */
 //    @RequestMapping(value = "/depts", method = RequestMethod.GET)// 指定请求方式为GET
-    @GetMapping("/depts")
+    @GetMapping
     public Result list() {
         log.info("查询全部部门数据");
 
@@ -42,13 +43,27 @@ public class DeptController {
 
     /**
      * 删除部门
+     * @param id
      * @return
      */
-    @DeleteMapping("/depts/{id}")
+    @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
         log.info("根据id删除部门:{}",id);
         // 调用service删除部门
         deptService.delete(id);
+        return Result.success();
+    }
+
+    /**
+     * 新增部门
+     * @param dept
+     * @return
+     */
+    @PostMapping
+    public Result add(@RequestBody Dept dept) {
+        log.info("新增部门: {}", dept);
+        // 调用service新增部门
+        deptService.add(dept);
         return Result.success();
     }
 }

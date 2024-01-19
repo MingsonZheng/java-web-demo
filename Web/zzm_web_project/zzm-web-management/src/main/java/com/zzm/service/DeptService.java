@@ -22,4 +22,10 @@ public interface DeptService {
      * @param id
      */
     void delete(Integer id);
+
+    /**
+     * 新增部门
+     * @param dept
+     */
+    void add(Dept dept);
 }
