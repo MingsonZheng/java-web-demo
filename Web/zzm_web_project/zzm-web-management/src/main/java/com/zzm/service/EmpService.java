@@ -1,5 +1,6 @@
 package com.zzm.service;
 
+import com.zzm.pojo.Emp;
 import com.zzm.pojo.PageBean;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,4 +28,10 @@ public interface EmpService {
      * @param ids
      */
     void delete(List<Integer> ids);
+
+    /**
+     * 新增员工
+     * @param emp
+     */
+    void save(Emp emp);
 }

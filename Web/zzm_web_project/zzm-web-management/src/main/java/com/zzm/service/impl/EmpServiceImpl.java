@@ -55,4 +55,11 @@ public class EmpServiceImpl implements EmpService {
     public void delete(List<Integer> ids) {
         empMapper.delete(ids);
     }
+
+    @Override
+    public void save(Emp emp) {
+        emp.setCreateTime(LocalDateTime.now());
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.insert(emp);
+    }
 }
