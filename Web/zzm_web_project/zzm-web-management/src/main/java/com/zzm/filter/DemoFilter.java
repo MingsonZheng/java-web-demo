@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author Mingson
  * @version 1.0
  */
-@WebFilter(urlPatterns = "/*")
+//@WebFilter(urlPatterns = "/*")
 public class DemoFilter implements Filter {
     @Override //初始化方法，只调用一次
     public void init(FilterConfig filterConfig) throws ServletException {
