@@ -11,6 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
  * 概念: 是一种动态拦截方法调用的机制，类似于过滤器。Spring框架中提供的，用来动态拦截控制器方法的执行。
  * 作用: 拦截请求，在指定的方法调用前后，根据业务需要执行预先设定的代码。
  *
+ * Filter与Interceptor
+ * 接口规范不同: 过滤器需要实现Filter接口，而拦截器需要实现HandlerInterceptor接口。
+ * 拦截范围不同: 过滤器Filter会拦截所有的资源，而Interceptor只会拦截Spring环境中的资源。
+ *
  * @author Mingson
  * @version 1.0
  */

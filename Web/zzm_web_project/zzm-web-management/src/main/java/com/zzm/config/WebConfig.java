@@ -19,6 +19,12 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 //        WebMvcConfigurer.super.addInterceptors(registry);
-        registry.addInterceptor(loginCheckInterceptor).addPathPatterns("/**");
+        /**
+         * /* 一级路径
+         * /** 任意级路径
+         * /depts/* /depts下的一级路径
+         * /depts/** /depts下的任意级路径
+         */
+        registry.addInterceptor(loginCheckInterceptor).addPathPatterns("/**").excludePathPatterns("/login");
     }
 }
