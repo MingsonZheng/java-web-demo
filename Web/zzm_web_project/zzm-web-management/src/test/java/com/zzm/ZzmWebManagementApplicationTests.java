@@ -27,7 +27,7 @@ class ZzmWebManagementApplicationTests {
     }
 
     /**
-     * Éú³ÉJWT
+     * ç”ŸæˆJWT
      */
     @Test
     public void testGenJwt() {
@@ -37,14 +37,14 @@ class ZzmWebManagementApplicationTests {
 
         String jwt = Jwts.builder()
                 .signWith(SignatureAlgorithm.HS256, "zzmzzm")
-                .setClaims(claims)// ×Ô¶¨ÒåÄÚÈİ(ÔØºÉ)
-                .setExpiration(new Date(System.currentTimeMillis() + 3600 * 1000))// ÉèÖÃÓĞĞ§ÆÚÎª1h
+                .setClaims(claims)// è‡ªå®šä¹‰å†…å®¹(è½½è·)
+                .setExpiration(new Date(System.currentTimeMillis() + 3600 * 1000))// è®¾ç½®æœ‰æ•ˆæœŸä¸º1h
                 .compact();
         System.out.println(jwt);
     }
 
     /**
-     * ½âÎöJWT
+     * è§£æJWT
      */
     @Test
     public void testParseJwt() {
