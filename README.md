@@ -63,6 +63,8 @@
 - Mybatis
 - 案例
 - 登录
+- 异常
+- 事务管理
 
 ### maven
 - maven-idea集成-配置及创建maven项目
@@ -136,3 +138,11 @@
 - 登录校验-Interceptor-入门
 - 登录校验-Interceptor-详解
 - 登录校验-Interceptor-登录校验拦截器
+
+### 异常
+- 异常处理
+
+### 事务管理
+- 事务管理-事务回顾-spring事务管理
+- 事务管理-事务进阶-rollbackFor属性
+- 事务管理-事务进阶-propagation属性
