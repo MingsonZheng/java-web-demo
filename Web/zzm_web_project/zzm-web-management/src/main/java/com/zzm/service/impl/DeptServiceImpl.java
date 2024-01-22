@@ -28,12 +28,18 @@ public class DeptServiceImpl implements DeptService {
         return deptMapper.list();
     }
 
-    @Transactional //spring事务管理
+    @Transactional(rollbackFor = Exception.class) //spring事务管理
     @Override
-    public void delete(Integer id) {
+    public void delete(Integer id) throws Exception {
         deptMapper.deleteById(id);// 根据ID删除部门数据
 
-        int i = 1 / 0;// 模拟抛出异常
+//        int i = 1 / 0;// 模拟抛出异常
+
+        // 默认情况下，只有出现 RuntimeException才回滚异常
+        // rollbackFor属性用于控制出现何种异常类型，回滚事务。
+        if (true) {
+            throw new Exception("出错啦...");
+        }
 
         empMapper.deleteByDeptId(id);// 根据部门ID删除该部门下的员工
     }
