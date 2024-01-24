@@ -7,6 +7,13 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 /**
+ * AOP核心概念
+ * 连接点: JoinPoint，可以被AOP控制的方法(暗含方法执行时的相关信息) 比如 DeptServiceImpl 中的方法
+ * 通知: Advice，指哪些重复的逻辑，也就是共性功能(最终体现为一个方法) 比如 TimeAspect 的 recordTime 方法
+ * 切入点: Pointcut，匹配连接点的条件，通知仅会在切入点方法执行时被应用 比如 TimeAspect 的 Around 注解
+ * 切面: Aspect，描述通知与切入点的对应关系(通知+切入点) 比如 TimeAspect 这个切面类
+ * 目标对象: Target，通知所应用的对象 比如 DeptServiceImpl 类
+ *
  * @author Mingson
  * @version 1.0
  */
