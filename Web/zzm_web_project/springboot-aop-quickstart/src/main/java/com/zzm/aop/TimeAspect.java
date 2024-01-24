@@ -22,7 +22,8 @@ import org.springframework.stereotype.Component;
 @Aspect //AOP类
 public class TimeAspect {
 
-    @Around("execution(* com.zzm.service.*.*(..))") //切入点表达式
+//    @Around("execution(* com.zzm.service.*.*(..))") //切入点表达式
+    @Around("com.zzm.aop.MyAspect1.pt()")
     public Object recordTime(ProceedingJoinPoint joinPoint) throws Throwable {
         // 1. 记录开始时间
         long begin = System.currentTimeMillis();

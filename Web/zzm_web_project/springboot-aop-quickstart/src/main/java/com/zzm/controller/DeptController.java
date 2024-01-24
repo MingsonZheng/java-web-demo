@@ -64,4 +64,10 @@ public class DeptController {
         deptService.add(dept);
         return Result.success();
     }
+
+    @PutMapping()
+    public Result edit(@RequestBody Dept dept) {
+        deptService.getById(dept.getId());
+        return Result.success();
+    }
 }
