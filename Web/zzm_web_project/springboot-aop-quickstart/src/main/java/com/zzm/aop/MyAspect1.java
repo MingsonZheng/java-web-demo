@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-@Aspect
+//@Aspect
 public class MyAspect1 {
 
     // @Pointcut 该注解的作用是将公共的切点表达式抽取出来，需要用到时引用该切点表达式即可。
