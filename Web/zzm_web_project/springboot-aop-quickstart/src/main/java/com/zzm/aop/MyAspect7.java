@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  */
 @Slf4j
-@Aspect
+//@Aspect
 @Component
 public class MyAspect7 {
 
