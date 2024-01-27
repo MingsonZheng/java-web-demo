@@ -1,5 +1,6 @@
 package com.zzm.service.impl;
 
+import com.zzm.aop.MyLog;
 import com.zzm.mapper.DeptMapper;
 import com.zzm.mapper.EmpMapper;
 import com.zzm.pojo.Dept;
@@ -28,6 +29,7 @@ public class DeptServiceImpl implements DeptService {
     @Autowired
     private EmpMapper empMapper;
 
+//    @MyLog
     @Override
     public List<Dept> list() {
         return deptMapper.list();
@@ -35,6 +37,7 @@ public class DeptServiceImpl implements DeptService {
 
     //    @Transactional(rollbackFor = Exception.class) //spring事务管理
     @Transactional
+    @MyLog
     @Override
     public void delete(Integer id) /*throws Exception*/ {
         try {
