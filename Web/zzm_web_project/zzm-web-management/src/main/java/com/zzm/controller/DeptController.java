@@ -1,5 +1,6 @@
 package com.zzm.controller;
 
+import com.zzm.anno.Log;
 import com.zzm.pojo.Dept;
 import com.zzm.pojo.Result;
 import com.zzm.service.DeptService;
@@ -46,6 +47,7 @@ public class DeptController {
      * @param id
      * @return
      */
+    @Log
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) throws Exception {
         log.info("根据id删除部门:{}",id);
@@ -59,6 +61,7 @@ public class DeptController {
      * @param dept
      * @return
      */
+    @Log
     @PostMapping
     public Result add(@RequestBody Dept dept) {
         log.info("新增部门: {}", dept);
