@@ -65,6 +65,7 @@
 - 登录
 - 异常
 - 事务管理
+- AOP
 
 ### maven
 - maven-idea集成-配置及创建maven项目
@@ -146,3 +147,13 @@
 - 事务管理-事务回顾-spring事务管理
 - 事务管理-事务进阶-rollbackFor属性
 - 事务管理-事务进阶-propagation属性
+
+### AOP
+- AOP基础-快速入门
+- AOP基础-核心概念
+- AOP进阶-通知类型
+- AOP进阶-通知顺序
+- AOP进阶-切入点表达式-execution
+- AOP进阶-切入点表达式-@annotation
+- AOP进阶-连接点
+- AOP案例-记录操作日志
