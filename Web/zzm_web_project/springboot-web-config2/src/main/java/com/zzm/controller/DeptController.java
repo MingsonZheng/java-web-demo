@@ -3,8 +3,9 @@ package com.zzm.controller;
 import com.zzm.pojo.Dept;
 import com.zzm.pojo.Result;
 import com.zzm.service.DeptService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +16,8 @@ import java.util.List;
  * @author Mingson
  * @version 1.0
  */
-@Slf4j
+//@Lazy //延迟初始化
+@Scope("prototype")
 @RequestMapping("/depts")
 @RestController
 public class DeptController {

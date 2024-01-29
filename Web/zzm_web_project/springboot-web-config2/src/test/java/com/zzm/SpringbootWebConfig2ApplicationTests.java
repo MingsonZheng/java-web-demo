@@ -34,4 +34,30 @@ class SpringbootWebConfig2ApplicationTests {
 		DeptController bean3 = applicationContext.getBean("deptController", DeptController.class);
 		System.out.println(bean3);
 	}
+
+	/**
+	 * bean作用域
+	 * 	Spring支持五种作用域，后三种在web环境才生效:
+	 *
+	 *  作用域 		说明
+	 * 	singleton 	容器内同 名称 的 bean 只有一个实例(单例)(默认)
+	 * 	prototype	每次使用该 bean 时会创建新的实例(非单例)
+	 * 	request		每个请求范围内会创建新的实例(web环境中，了解)
+	 * 	session		每个会话范围内会创建新的实例(web环境中，了解)
+	 * 	application	每个应用范围内会创建新的实例(web环境中，了解)
+	 *
+	 * 	可以通过 @Scope 注解来进行配置作用域:
+	 *
+	 * 	注意事项
+	 * 	默认singleton的bean，在容器启动时被创建，可以使用@Lazy注解来延迟初始化(延迟到第一次使用时)。
+	 * 	prototype的bean，每一次使用该bean的时候都会创建一个新的实例。
+	 * 	实际开发当中，绝大部分的Bean是单例的，也就是说绝大部分Bean不需要配置scope属性。
+	 */
+	@Test
+	public void testScope() {
+		for (int i = 0; i < 10; i++) {
+			DeptController deptController = applicationContext.getBean(DeptController.class);
+			System.out.println(deptController);
+		}
+	}
 }
