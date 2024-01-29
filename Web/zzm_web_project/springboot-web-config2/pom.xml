@@ -77,7 +77,14 @@
 			<artifactId>gson</artifactId>
 			<version>2.10.1</version>
 		</dependency>
-    </dependencies>
+
+		<!--引入第三方提供依赖-->
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>zzm-utils</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
