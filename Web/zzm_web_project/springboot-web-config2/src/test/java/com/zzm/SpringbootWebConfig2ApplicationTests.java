@@ -1,6 +1,9 @@
 package com.zzm;
 
 import com.zzm.controller.DeptController;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +14,9 @@ class SpringbootWebConfig2ApplicationTests {
 
 	@Autowired
 	private ApplicationContext applicationContext;
+
+	@Autowired
+	private SAXReader saxReader;
 
 	/**
 	 * 获取bean
@@ -59,5 +65,34 @@ class SpringbootWebConfig2ApplicationTests {
 			DeptController deptController = applicationContext.getBean(DeptController.class);
 			System.out.println(deptController);
 		}
+	}
+
+	/**
+	 * 第三方bean
+	 * @Bean
+	 * 	如果要管理的bean对象来自于第三方(不是自定义的)，是无法用 @Component及衍生注解声明bean的，就需要用到 @Bean注解。
+	 * 	若要管理的第三方bean对象，建议对这些bean进行集中分类配置，可以通过 @Configuration 注解声明一个配置类。
+	 *
+	 * 注意事项
+	 * 	通过@Bean注解的name或value属性可以声明bean的名称，如果不指定，默认bean的名称就是方法名。
+	 * 	如果第三方bean需要依赖其它bean对象，直接在bean定义方法中设置形参即可，容器会根据类型自动装配。
+	 * @throws Exception
+	 */
+	@Test
+	public void testThirdBean() throws Exception {
+//		SAXReader saxReader = new SAXReader();
+
+		Document document = saxReader.read(this.getClass().getClassLoader().getResource("1.xml"));
+		Element rootElement = document.getRootElement();
+		String name = rootElement.element("name").getText();
+		String age = rootElement.element("age").getText();
+
+		System.out.println(name + " : " + age);
+	}
+
+	@Test
+	public void testGetBean2() {
+		Object saxReader = applicationContext.getBean("saxReader");
+		System.out.println(saxReader);
 	}
 }
