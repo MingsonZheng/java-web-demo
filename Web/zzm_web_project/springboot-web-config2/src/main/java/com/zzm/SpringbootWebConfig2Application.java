@@ -12,6 +12,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 		导入 配置类
  * 		导入 ImportSelector 接口实现类
  * 		@EnableXxxx注解，封装@Import注解
+ *
+ *  源码跟踪
+ *  	@springBootApplication
+ * 			该注解标识在SpringBoot工程引导类上，是SpringBoot中最最最重要的注解。该注解由三个部分组成:
+ * 				@SpringBootConfiguration: 该注解与 @Configuration 注解作用相同，用来声明当前也是一个配置类。
+ * 				@ComponentScan:组件扫描，默认扫描当前引导类所在包及其子包。
+ * 				@EnableAutoConfiquration:SpringBoot实现自动化配置的核心注解。
+ *
+ * 				@EnableAutoConfiquration ->
+ * 					@Import({AutoConfigurationImportSelector.class}) ->
+ * 						getCandidateConfigurations() ->
+ * 								String[] selectImports() ->
+ * 									getAutoConfigurationEntry() ->
+ * 										META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
+ * 										(spring-boot 2.7.x 之前版本的配置文件在 META-INF/spring.factories)
  */
 
 //@ComponentScan({"com.example", "com.zzm"}) //组件扫描
