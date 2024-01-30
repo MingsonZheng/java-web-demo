@@ -3,6 +3,7 @@ package com.zzm.utils;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.model.PutObjectRequest;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,15 +20,27 @@ import java.util.UUID;
 @Component
 public class AliOSSUtils {
 
-    // Endpoint以华东1（杭州）为例，其它Region请按实际情况填写。
-    // OSS管理控制台 -> Bucket 列表 -> 选择创建的 Bucket -> 概览 -> Endpoint(地域节点) -> 外网访问
-    private String endpoint = "https://oss-cn-hangzhou.aliyuncs.com";
-//    // 从环境变量中获取访问凭证。运行本代码示例之前，请确保已设置环境变量OSS_ACCESS_KEY_ID和OSS_ACCESS_KEY_SECRET。
-//    EnvironmentVariableCredentialsProvider credentialsProvider = CredentialsProviderFactory.newEnvironmentVariableCredentialsProvider();
-    private String accessKeyId = "";
-    private String accessKeySecret = "";
-    // 填写Bucket名称，例如examplebucket。
-    String bucketName = "examplebucket";
+    /**
+     * @Value 注解通常用于外部配置的属性注入，具体用法为: @Value("${配置文件中的key}")
+     */
+    @Value("${aliyun.oss.endpoint}")
+    private String endpoint;
+    @Value("${aliyun.oss.accessKeyId}")
+    private String accessKeyId;
+    @Value("${aliyun.oss.accessKeySecret}")
+    private String accessKeySecret;
+    @Value("${aliyun.oss.bucketName}")
+    private String bucketName;
+
+//    // Endpoint以华东1（杭州）为例，其它Region请按实际情况填写。
+//    // OSS管理控制台 -> Bucket 列表 -> 选择创建的 Bucket -> 概览 -> Endpoint(地域节点) -> 外网访问
+//    private String endpoint = "https://oss-cn-hangzhou.aliyuncs.com";
+////    // 从环境变量中获取访问凭证。运行本代码示例之前，请确保已设置环境变量OSS_ACCESS_KEY_ID和OSS_ACCESS_KEY_SECRET。
+////    EnvironmentVariableCredentialsProvider credentialsProvider = CredentialsProviderFactory.newEnvironmentVariableCredentialsProvider();
+//    private String accessKeyId = "";
+//    private String accessKeySecret = "";
+//    // 填写Bucket名称，例如examplebucket。
+//    String bucketName = "examplebucket";
 
     /**
      * 实现上传图片到 OSS
