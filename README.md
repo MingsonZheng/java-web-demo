@@ -66,6 +66,7 @@
 - 异常
 - 事务管理
 - AOP
+- SpringBoot
 
 ### maven
 - maven-idea集成-配置及创建maven项目
@@ -122,9 +123,13 @@
 - 案例-员工管理-新增员工
 - 案例-文件上传-简介
 - 案例-文件上传-本地存储
+- 案例-文件上传-阿里云OSS-入门
+- 案例-文件上传-阿里云OSS-集成
 - 案例-修改员工-查询回显
 - 案例-修改员工-修改员工
+- 案例-配置文件-参数配置化
 - 案例-配置文件-yml配置文件
+- 案例-配置文件-@ConfiqurationProperties
 
 ### 登录
 - 基础登录功能
@@ -157,3 +162,14 @@
 - AOP进阶-切入点表达式-@annotation
 - AOP进阶-连接点
 - AOP案例-记录操作日志
+
+### SpringBoot
+- SpringBoot-配置优先级
+- bean的管理-bean的获取
+- bean的管理-bean的作用域
+- bean的管理-第三方bean
+- SpringBoot原理-自动配置-概述
+- SpringBoot原理-自动配置-方案
+- SpringBoot原理-自动配置-原理分析-源码跟踪
+- SpringBoot原理-自动配置-原理分析-@conditional
+- SpringBoot原理-自动配置-案例(自定义starter实现)
