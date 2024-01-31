@@ -2,7 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.zzm</groupId>
+  <parent>
+    <groupId>com.zzm</groupId>
+    <artifactId>zzm-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../zzm-parent/pom.xml</relativePath>
+  </parent>
+
   <artifactId>zzm-pojo</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -14,11 +20,4 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <dependencies>
-      <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>1.18.30</version>
-      </dependency>
-  </dependencies>
 </project>
