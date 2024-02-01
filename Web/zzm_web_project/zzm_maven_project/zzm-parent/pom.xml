@@ -150,4 +150,36 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <!--
+    介绍
+        私服是一种特殊的远程仓库，它是架设在局域网内的仓库服务，用来代理位于外部的中央仓库，用于解决团队内部资源共享与资源同步问题。
+        依赖查找顺序:
+            本地仓库
+            私服
+            中央仓库
+        注意事项
+            私服在企业项目开发中，一个项目/公司，只需要一台即可(无需我们自己搭建，会使用即可)。
+    资源上传与下载
+        项目版本:
+            RELEASE(发行版本):功能趋于稳定、当前更新停止，可以用于发行的版本，存储在私服中的RELEASE仓库中。
+            SNAPSHOT(快照版本):功能不稳定、尚处于开发中的版本，即快照版本，存储在私服的SNAPSHOT仓库中。
+        1. 设置私服的访问用户名/密码(settings.xml中的servers中配置)
+        2. IDEA的maven工程的pom文件中配置上传(发布)地址
+        3. 设置私服依赖下载的仓库组地址(settings.xml中的mirrors、profiles中配置)
+    -->
+    <!--4. 如果需要上传自己的项目到私服上，需要在项目的pom.xml文件中，增加如下配置，来配置项目发布的地址(也就是私服的地址)-->
+    <!--<distributionManagement>
+        &lt;!&ndash;release版本的发布地址&ndash;&gt;
+        <repository>
+            <id>maven-release</id>
+            <url>http://localhost:8081/repository/maven-releases/</url>
+        </repository>
+
+        &lt;!&ndash;snapshot版本的发布地址&ndash;&gt;
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>-->
 </project>
