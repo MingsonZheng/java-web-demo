@@ -67,6 +67,7 @@
 - 事务管理
 - AOP
 - SpringBoot
+- maven高级
 
 ### maven
 - maven-idea集成-配置及创建maven项目
@@ -173,3 +174,10 @@
 - SpringBoot原理-自动配置-原理分析-源码跟踪
 - SpringBoot原理-自动配置-原理分析-@conditional
 - SpringBoot原理-自动配置-案例(自定义starter实现)
+
+### maven高级
+- maven高级-分模块设计与开发
+- maven高级-继承与聚合-继承关系实现
+- maven高级-继承与聚合-版本锁定
+- maven高级-继承与聚合-聚合实现
+- maven高级-私服
